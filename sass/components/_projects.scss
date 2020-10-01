@@ -1,0 +1,88 @@
+/* portfolio projects задаем основной шрифт списка проектов */
+.projects {
+  @extend %flex;
+  @extend %list;
+  font-size: $font-size-second;
+  line-height: 1.87;
+  /* задаем ширину контента для 3 элементов в строке */
+  &__item {
+    width: calc((100% - 30px * 2) / 3);
+    /* каждый не первый из трех элементов li будет отодвигаться от левого соседа на 30 пикселей */
+    &:not(:nth-child(3n + 1)) {
+      margin-left: 30px;
+    }
+    /* каждый после третьего элемент li будет отодвигаться от верхней строки на 30 пикселей */
+    &:nth-child(n + 4) {
+      margin-top: 30px;
+    }
+  }
+  /* задаем границы ссылкам */
+  &__link {
+    display: block;
+    width: 100%;
+    background-color: $white-color;
+    box-shadow: none;
+    transition: box-shadow $time-animation $function-animation;
+    /* Выезжание текста на картинку*/
+    &:hover .thumbnail__title,
+    &:focus .thumbnail__title {
+      transform: translateY(-100%);
+    }
+    /* задаем тени при наведении фокусе */
+    &:hover,
+    &:focus {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+    /* убираем дефолтные отступы */
+    & p {
+      margin: 0;
+    }
+  }
+  /* задаем позицию текста, и отступы описанию карточки */
+  &__description {
+    margin: 0;
+    padding: 20px 24px;
+    text-align: left;
+    border: 1px solid #eeeeee;
+    border-top-style: none;
+  }
+  /* projects title */
+  &__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+
+    font-weight: $font-weight-base;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: $letter-spacing-second;
+    color: $title-text-color;
+  }
+}
+
+/* тумба для картинок с описанием */
+.thumbnail {
+  position: relative;
+  overflow: hidden;
+  /* описание картинок спрятаное по умолчанию */
+  &__title {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    /* начальная позиция анимации */
+    transform: translateY(0%);
+    transition: transform $time-animation $function-animation;
+
+    height: 100%;
+    width: 100%;
+    padding: 64px 24px;
+    font-style: normal;
+    font-weight: $font-weight-second;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: $letter-spacing-base;
+    vertical-align: middle;
+    background: rgba(33, 150, 243, 0.9);
+    color: #ffffff;
+  }
+}

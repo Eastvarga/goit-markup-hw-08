@@ -1,0 +1,103 @@
+/* header */
+.header {
+  /* fixed header */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  /* центрируем элементы в хедере по вертикали, 
+ добавляем паддинги уменьшены отступы на ширину border-top и border-bottom*/
+  align-items: center;
+  padding-top: 23px;
+  padding-bottom: 24px;
+
+  background-color: $white-color;
+  font-weight: $font-weight-third;
+  font-size: $font-size-base;
+  line-height: $line-height-second;
+  letter-spacing: 0.02em;
+  /* добавлям линии согласно макета */
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ececec;
+}
+
+/* навигация по сайту */
+.links {
+  @extend %flex;
+  @extend %list;
+
+  & li + li {
+    margin-left: 50px;
+  }
+  &__item {
+    transition: color $time-animation $function-animation;
+    color: $title-text-color;
+    // цвет при фокусе ховере и текущей страницы
+    &.links__item--current,
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+    &--big {
+      @extend %big-paddings;
+    }
+    &--current {
+      position: relative;
+      &::after {
+        position: absolute;
+
+        content: "";
+        width: 100%;
+        height: 4px;
+        left: 0;
+        bottom: -27px;
+        background: $accent-color;
+        border-radius: 2px;
+        opacity: 1;
+        /* transition: opacity $time-animation $function-animation; */
+      }
+    }
+  }
+}
+/* центрируем элементы */
+.navigation,
+.contact {
+  @extend %flex;
+  align-items: center;
+}
+.contact {
+  @extend %list;
+  margin-left: auto;
+  &__item {
+    @extend %flex;
+
+    transition: color $time-animation $function-animation;
+  }
+  &__item:hover,
+  &__item:focus {
+    color: $accent-color;
+  }
+  /* расширяем зону активации ссылок в шапке для лучшего юзабилити */
+  &__item--big {
+    @extend %big-paddings;
+  }
+  & li + li {
+    margin-left: 30px;
+  } /* иконка почты */
+  &__mail-icon {
+    align-self: center;
+    margin: 0 10px 0 0;
+    width: 16px;
+    height: 12px;
+    fill: currentColor;
+  }
+  /* иконка телефона */
+  &__phone-icon {
+    display: block;
+    align-self: center;
+    margin: 0 10px 0 0;
+    width: 10px;
+    height: 16px;
+    fill: currentColor;
+  }
+}

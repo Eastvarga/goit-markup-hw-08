@@ -1,0 +1,73 @@
+/* clients section */
+/* задаем размер иконок компании*/
+.clients {
+  @extend %flex;
+  @extend %list;
+  &__item {
+    margin: 0;
+    width: calc((100% - 30px * 5) / 6);
+    height: 90px;
+    /* расстояние между иконками-ссылками */
+    &:not(:nth-child(6n + 1)) {
+      margin-left: 30px;
+    }
+  }
+
+  /* определяем ссылки для иконок. размер, цвет границы */
+  &__link {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    color: $icon-color;
+    border: 1px solid $icon-color;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+
+    transition: color $time-animation $function-animation,
+      border-color $time-animation $function-animation;
+    /* цвет иконок при ховере */
+    &:hover {
+      border-color: $accent-color;
+      color: $accent-color;
+    }
+  }
+
+  /* иконка компании */
+  &__ya-and-co {
+    width: 44px;
+    height: 49px;
+    fill: currentColor;
+  }
+  /* иконка компании */
+  &__company-tagline-here {
+    width: 40px;
+    height: 52px;
+    fill: currentColor;
+  }
+  /* иконка компании */
+  &__company {
+    width: 41px;
+    height: 43px;
+    fill: currentColor;
+  }
+  /* иконка компании */
+  &__foster-peters {
+    width: 80px;
+    height: 42px;
+    fill: currentColor;
+  }
+  /* иконка компании */
+  &__brand {
+    width: 59px;
+    height: 47px;
+    fill: currentColor;
+  }
+  /* иконка компании */
+  &__company-tag-line {
+    width: 88px;
+    height: 45px;
+    fill: currentColor;
+  }
+}

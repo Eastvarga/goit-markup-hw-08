@@ -1,0 +1,30 @@
+/* Секция героя */
+/* центрируем текст в герое */
+.hero {
+  display: block;
+  width: 1600px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 200px 0;
+  background-image: linear-gradient(
+      to right,
+      $hero-gradient-color,
+      $hero-gradient-color
+    ),
+    url("../img/hero-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__title {
+    width: 600px;
+    margin: 0 auto 30px;
+
+    color: $white-color;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+
+    letter-spacing: $letter-spacing-second;
+    text-transform: uppercase;
+  }
+}

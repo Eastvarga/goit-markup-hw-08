@@ -1,0 +1,34 @@
+/* Our team */
+/* флекс элементы списку задали ранее */
+/* задаем шрифт и цвет секции */
+/* задаем отступ до секций соседей */
+
+/* задаем ширину контента, тень карточке,и ориентацию текста */
+.team {
+  @extend %flex;
+  @extend %list;
+  &__item {
+    width: calc((100% - 30px * 3) / 4);
+    background-color: $white-color;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    text-align: center;
+    /* задаем каждому не первому в строке элементу левый марджин */
+    &:not(:nth-child(4n + 1)) {
+      margin-left: 30px;
+    }
+  }
+
+  /* our team title font,
+ задаем марджин до картинки и до абзаца*/
+  &__title {
+    margin: 30px 0 10px;
+    color: $title-text-color;
+    font-weight: $font-weight-third;
+  }
+  /* отступ для формы карточки */
+  &__text {
+    margin: 0 0 16px 0;
+  }
+}

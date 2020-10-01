@@ -1,0 +1,102 @@
+/* footer */
+/* задаем отступы для футера */
+/* цвет иконок в футере */
+
+.footer {
+  background-color: $secondary-bg-color;
+  width: 1600px;
+  padding: 60px 0;
+  margin: 0 auto;
+}
+/* адресс */
+/* делаем контент лого+адресс шириной на четверть от ширины страницы */
+.address {
+  display: block;
+  width: calc((100% - 30px * 3) / 4);
+  &__holder {
+    color: $white-color;
+    font-style: normal;
+  }
+  &__street {
+    color: $white-color;
+    font-style: normal;
+  }
+  /* footer contacts links */
+  /* задаем ссылкам вертикальные отступы */
+  &__link {
+    color: $footer-link-color;
+    font-style: normal;
+    display: block;
+    margin: 9px 0 0;
+    transition: color $time-animation $function-animation;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+}
+
+// кусок содержащий ссылки на социалки
+.follow {
+  @extend %flex;
+  width: calc((100% - 30px * 3) / 4);
+  margin: 0 0 0 30px;
+  &__list {
+    @extend %list;
+    @extend %flex;
+  }
+  &__link {
+    @extend %flex;
+    color: $white-color;
+    background-color: $footer-icon-bg-color;
+    transition: background-color $time-animation $function-animation;
+    @extend %icon;
+    /* цвет иконок при ховере */
+    &:hover {
+      @extend %hover-color;
+    }
+  }
+  &__item {
+    @extend %flex;
+    width: 44px;
+    height: 44px;
+    &:not(:nth-child(4n + 1)) {
+      margin-left: 10px;
+    }
+  }
+  &__title {
+    @extend %footer-title;
+  }
+}
+
+/* заголовок соцсетей*/
+/* submit-footer div */
+.submit {
+
+  @extend %flex;
+  width: calc((100% - 30px) / 2);
+  margin-left: 30px;
+  &__title {
+    @extend %footer-title;
+  }
+  &__input {
+    display: block;
+    width: 358px;
+    padding: 15px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* тень */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: $secondary-bg-color;
+    font-weight: $font-weight-second;
+    font-size: $font-size-second;
+    line-height: 1.25;
+    letter-spacing: $letter-spacing-base;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all $time-animation $function-animation;
+    &:focus {
+      @extend %modal-focus;
+    }
+  }
+}
