@@ -3,10 +3,19 @@
 /* цвет иконок в футере */
 
 .footer {
-  background-color: $secondary-bg-color;
-  width: 1600px;
   padding: 60px 0;
   margin: 0 auto;
+  background-color: $secondary-bg-color;
+
+  // @include for-size(mobile) {
+  //   max-width: 480px;
+  // }
+  // @include for-size(tablet) {
+  //   max-width: 768px;
+  // }
+  // @include for-size(desktop) {
+  //   max-width: 1600px;
+  // }
 }
 /* адресс */
 /* делаем контент лого+адресс шириной на четверть от ширины страницы */
@@ -73,16 +82,20 @@
 /* заголовок соцсетей*/
 /* submit-footer div */
 .submit {
-
   @extend %flex;
   width: calc((100% - 30px) / 2);
   margin-left: 30px;
   &__title {
+    width: 100%;
     @extend %footer-title;
+  }
+  &__label {
+    // max-width: 358px;
+    flex-grow: 1;
   }
   &__input {
     display: block;
-    width: 358px;
+    width: 100%;
     padding: 15px 16px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     /* тень */

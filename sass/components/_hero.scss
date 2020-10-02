@@ -2,10 +2,11 @@
 /* центрируем текст в герое */
 .hero {
   display: block;
-  width: 1600px;
+  // max-width: 480px;
+  padding: 118px 0;
   text-align: center;
   margin: 0 auto;
-  padding: 200px 0;
+
   background-image: linear-gradient(
       to right,
       $hero-gradient-color,
@@ -15,16 +16,30 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  // @include for-size(tablet) {
+  //   width: 768px;
+  // }
+  @include for-size(desktop) {
+    width: 1600px;
+    padding: 200px 0;
+  }
+
   &__title {
-    width: 600px;
+    max-width: 360px;
     margin: 0 auto 30px;
-
     color: $white-color;
-    font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
-
+    @include font(26px, 1.62, 900);
     letter-spacing: $letter-spacing-second;
     text-transform: uppercase;
+
+    @include for-size(desktop) {
+      max-width: 600px;
+
+      // @include font(44px, 1.36, 900);
+      // font-weight: 900;
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
 }

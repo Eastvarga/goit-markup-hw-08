@@ -3,7 +3,9 @@
   /* fixed header */
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+
   z-index: 2;
   /* центрируем элементы в хедере по вертикали, 
  добавляем паддинги уменьшены отступы на ширину border-top и border-bottom*/

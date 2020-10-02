@@ -2,6 +2,7 @@
 
 html {
   box-sizing: border-box;
+  // outline: 4px solid red;
 }
 body {
   background-color: $white-color;
@@ -52,16 +53,23 @@ a {
   /* отступ до следующей секции */
   &--whatwedo {
     padding-bottom: 94px;
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
   }
   &--team {
-    padding: 94px 0;
+    padding: 60px 0;
+    // padding: 94px 0;
     background-color: $alt-bg-color;
     font-size: $font-size-second;
     line-height: 1.19;
     letter-spacing: $letter-spacing-base;
   }
   &--pudding {
-    padding: 94px 0;
+    padding: 60px 0;
+    @include for-size(desktop) {
+      padding: 94px 0;
+    }
   }
 }
 
@@ -102,13 +110,15 @@ a {
   color: $white-color;
   background-color: $accent-color;
 
-  font-weight: $font-weight-base;
-  font-size: $font-size-second;
-  line-height: 1.87;
+  @include font($font-size-second, 1.87, $font-weight-base);
+  // font-weight: $font-weight-base;
+  // font-size: $font-size-second;
+  // line-height: 1.87;
   letter-spacing: $letter-spacing-second;
   text-align: center;
 
   transition: background-color $time-animation $function-animation;
+
   &:hover,
   &:focus {
     background-color: #188ce8;
@@ -126,7 +136,16 @@ a {
 
 /* создаем контейнер для контента */
 .container {
-  width: 1200px;
+  @include for-size(mobile) {
+    max-width: 480px;
+  }
+  @include for-size(tablet) {
+    max-width: 768px;
+  }
+  @include for-size(desktop) {
+    max-width: 1200px;
+  }
+
   padding: 0 15px;
   margin: 0 auto;
   &--header {

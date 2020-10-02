@@ -4,10 +4,8 @@
 
 .features {
   @extend %list;
-  @extend %flex;
-  margin: 0;
-  padding-left: 0;
   text-align: left;
+
   /* устанавливаем ширину контента для элементов */
   &__item {
     display: block;
@@ -15,6 +13,7 @@
     padding-left: 0;
     text-align: left;
     width: calc((100% - 30px * 3) / 4);
+
     /* задаем отступы между элементами, марджины */
     &:not(:nth-child(4n + 1)) {
       margin-left: 30px;
@@ -45,5 +44,9 @@
   /* убираем марджины у абзацев */
   &__text {
     margin: 0;
+  }
+  @include for-size(tablet) {
+    dysplay: block;
+    // flex-wrap: wrap;
   }
 }
