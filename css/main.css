@@ -18,7 +18,7 @@
 /* создаем флекс элементы,
  даем возможность переноса элементов на другую строку */
 .container--header, .container--footer, .container--forfilter, .container--forprojects, .social, .social__link, .links, .navigation,
-.contact, .contact__item, .features__holder, .whatwedo, .team, .clients, .follow, .follow__list, .follow__link, .follow__item, .submit, .filter, .projects {
+.contact, .contact__item, .features__holder, .whatwedo, .clients, .follow, .follow__list, .follow__link, .follow__item, .submit, .filter, .projects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -237,7 +237,7 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -271,13 +271,20 @@ a {
 }
 
 .section__title {
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
   color: #212121;
-  font-weight: 700;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1.17;
+  font-weight: 700;
   text-align: center;
   letter-spacing: 0.03em;
+}
+
+@media (min-width: 1200px) {
+  .section__title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
 }
 
 .section--whatwedo {
@@ -413,11 +420,19 @@ a {
 }
 
 .social {
-  width: calc(100% - 32px * 2);
-  margin: 0 auto;
-  padding-bottom: 30px;
+  width: calc(44px * 4 +10px * 3);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 24px;
   /* цвет иконок социал */
   /* иконки */
+}
+
+@media (min-width: 1200px) {
+  .social {
+    padding-bottom: 30px;
+  }
 }
 
 .social__link {
@@ -740,13 +755,16 @@ a {
 /* задаем отступ до секций соседей */
 /* задаем ширину контента, тень карточке,и ориентацию текста */
 .team {
+  margin: -15px;
   /* our team title font,
  задаем марджин до картинки и до абзаца*/
   /* отступ для формы карточки */
 }
 
 .team__item {
-  width: calc((100% - 30px * 3) / 4);
+  display: block;
+  margin: 15px;
+  width: 100%;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -755,8 +773,16 @@ a {
   /* задаем каждому не первому в строке элементу левый марджин */
 }
 
-.team__item:not(:nth-child(4n + 1)) {
-  margin-left: 30px;
+@media (min-width: 768px) {
+  .team__item {
+    width: calc((100% - 30px * 2) / 2);
+  }
+}
+
+@media (min-width: 1200px) {
+  .team__item {
+    width: calc((100% - 30px * 4) / 4);
+  }
 }
 
 .team__title {
@@ -769,9 +795,20 @@ a {
   margin: 0 0 16px 0;
 }
 
+@media (min-width: 768px) {
+  .team {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 /* clients section */
 /* задаем размер иконок компании*/
 .clients {
+  margin: -15px;
   /* определяем ссылки для иконок. размер, цвет границы */
   /* иконка компании */
   /* иконка компании */
@@ -782,14 +819,22 @@ a {
 }
 
 .clients__item {
-  margin: 0;
-  width: calc((100% - 30px * 5) / 6);
+  margin: 15px;
+  width: calc((100% - 30px * 2) / 2);
   height: 90px;
   /* расстояние между иконками-ссылками */
 }
 
-.clients__item:not(:nth-child(6n + 1)) {
-  margin-left: 30px;
+@media (min-width: 768px) {
+  .clients__item {
+    width: calc((100% - 30px * 3) / 3);
+  }
+}
+
+@media (min-width: 1200px) {
+  .clients__item {
+    width: calc((100% - 30px * 6) / 6);
+  }
 }
 
 .clients__link {

@@ -18,7 +18,7 @@ body {
 // задаем картинкам блочное поведение
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 /* убираем подчеркивание у ссылок, включаем наследование от родителя*/
@@ -46,13 +46,16 @@ a {
   }
   /* section title заголовок: шрифты, убираем дефолтные марджины*/
   &__title {
-    margin: 0 auto 50px;
+    margin: 0 auto 30px;
     color: $title-text-color;
-    font-weight: $font-weight-base;
-    font-size: 36px;
-    line-height: 1.17;
+    @include font(28px, 1.17, $font-weight-base);
+
     text-align: center;
     letter-spacing: $letter-spacing-base;
+    @include for-size(desktop) {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
   }
   /* отступ до следующей секции */
   &--whatwedo {
@@ -187,10 +190,14 @@ a {
 .social {
   @extend %flex;
   @extend %list;
-  width: calc(100% - 32px * 2);
-  margin: 0 auto;
-  padding-bottom: 30px;
+  width: calc(44px * 4 +10px * 3);
+  justify-content: center;
+  padding-bottom: 24px;
+  // padding-bottom: 30px;
   /* цвет иконок социал */
+  @include for-size(desktop) {
+    padding-bottom: 30px;
+  }
   &__link {
     @extend %flex;
     color: $icon-color;
