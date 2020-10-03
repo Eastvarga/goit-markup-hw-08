@@ -25,6 +25,25 @@
           <a class="logo logo--header" href="./index.html"
             ><span class="logo--accent">Web</span>Studio</a
           >
+          <button class="burger-menu" type="button" data-menu-button>
+            <svg
+              class="berger-menu__icon"
+              width="40"
+              height="40"
+              aria-expanded="false"
+              aria-label="Переключатель мобильного меню"
+            >
+              <use
+                class="burger__open"
+                href="./img/icon-sprite.svg#icon-header-menu"
+              ></use>
+              <use
+                class="burger__close"
+                href="./img/icon-sprite.svg#icon-header-close"
+              ></use>
+            </svg>
+          </button>
+
           <!-- Main links -->
           <ul class="links">
             <li>
@@ -380,5 +399,6 @@
         <!-- </div> -->
       </div>
     </footer>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

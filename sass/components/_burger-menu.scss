@@ -1,0 +1,50 @@
+.burger-menu {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  fill: #000;
+  transition: fill $time-animation $function-animation;
+  @include for-size(tablet) {
+    display: none;
+  }
+  //   &__icon {
+  //   }
+  //   &__open {
+  //     // display: block;
+  //   }
+
+  //   &__close {
+  //   }
+  & .burger__close {
+    display: none;
+  }
+  &.is-open .burger__open {
+    display: none;
+  }
+  &.is-open .burger__close {
+    display: block;
+  }
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+}
+
+.menu-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: tomato;
+  @include for-size(tablet) {
+    display: none;
+  }
+  &.is-open {
+    display: block;
+  }
+}

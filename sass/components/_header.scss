@@ -10,6 +10,9 @@
   /* центрируем элементы в хедере по вертикали, 
  добавляем паддинги уменьшены отступы на ширину border-top и border-bottom*/
   align-items: center;
+  @media screen and (max-width: 767px) {
+    position: relative;
+  }
   @include for-size(tablet) {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -31,11 +34,17 @@
 
 /* навигация по сайту */
 .links {
-  @extend %flex;
   @extend %list;
 
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   & li + li {
-    margin-left: 50px;
+    @include for-size(tablet) {
+      margin-left: 50px;
+    }
   }
   &__item {
     transition: color $time-animation $function-animation;
@@ -75,9 +84,9 @@
 }
 /* центрируем элементы */
 .navigation {
+  @include flexbox(space-between, center);
+
   @include for-size(tablet) {
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
   }
 }
