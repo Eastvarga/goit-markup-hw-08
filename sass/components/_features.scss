@@ -4,20 +4,36 @@
 
 .features {
   @extend %list;
+
   text-align: left;
 
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
   /* устанавливаем ширину контента для элементов */
   &__item {
     display: block;
     margin: 0;
     padding-left: 0;
-    text-align: left;
-    width: calc((100% - 30px * 3) / 4);
+    // text-align: left;
+    // text-align: center;
+    width: 100%;
+
+    @include for-size(tablet) {
+      width: calc((100% - 30px * 2) / 2);
+      margin: 15px;
+      text-align: left;
+    }
+    @include for-size(desktop) {
+      width: calc((100% - 30px * 4) / 4);
+    }
 
     /* задаем отступы между элементами, марджины */
-    &:not(:nth-child(4n + 1)) {
-      margin-left: 30px;
-    }
+    // &:not(:nth-child(4n + 1)) {
+    //   margin-left: 30px;
+    // }
   }
 
   /* задаем шрифты, убираем дефолтные марджины  */
@@ -25,6 +41,10 @@
     color: $title-text-color;
     @extend %features-font;
     margin: 0 0 10px 0;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
   }
   /* контейнеры иконок */
   &__holder {
@@ -44,9 +64,5 @@
   /* убираем марджины у абзацев */
   &__text {
     margin: 0;
-  }
-  @include for-size(tablet) {
-    dysplay: block;
-    // flex-wrap: wrap;
   }
 }

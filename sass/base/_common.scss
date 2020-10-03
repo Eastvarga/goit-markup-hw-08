@@ -40,6 +40,10 @@ a {
 }
 // секции
 .section {
+  padding: 60px 0;
+  @include for-size(desktop) {
+    padding: 94px 0;
+  }
   /* section title заголовок: шрифты, убираем дефолтные марджины*/
   &__title {
     margin: 0 auto 50px;
@@ -52,24 +56,28 @@ a {
   }
   /* отступ до следующей секции */
   &--whatwedo {
-    padding-bottom: 94px;
+    // padding-bottom: 94px;
+    padding: 0 0 94px 0;
     @media screen and (max-width: 1199px) {
       display: none;
     }
   }
   &--team {
-    padding: 60px 0;
+    // padding: 60px 0;
     // padding: 94px 0;
     background-color: $alt-bg-color;
     font-size: $font-size-second;
     line-height: 1.19;
     letter-spacing: $letter-spacing-base;
+    // @include for-size(desktop) {
+    //   padding: 94px 0;
+    // }
   }
   &--pudding {
-    padding: 60px 0;
-    @include for-size(desktop) {
-      padding: 94px 0;
-    }
+    // padding: 60px 0;
+    // @include for-size(desktop) {
+    //   padding: 94px 0;
+    // }
   }
 }
 
