@@ -167,6 +167,10 @@ a {
 
   &--header {
     @extend %flex;
+    @include for-size(tablet) {
+      justify-content: space-between;
+      align-items: center;
+    }
   }
   &--footer {
     @include for-size(tablet) {
@@ -177,7 +181,14 @@ a {
   }
   &--forfilter {
     @extend %flex;
-    padding: 94px 15px 50px;
+    padding: 60px 15px 40px;
+    @include for-size(tablet) {
+      padding-bottom: 30px;
+    }
+
+    @include for-size(desktop) {
+      padding: 94px 15px 50px;
+    }
   }
   &--forprojects {
     @extend %flex;
@@ -234,13 +245,17 @@ a {
 }
 /* раскрасим логотип */
 .logo {
-  margin-right: 93px;
-
   @include font(24px, 1.17, $font-weight-base);
   font-family: $font-logo;
 
+  @include for-size(tablet) {
+    margin-right: 88px;
+  }
+
   letter-spacing: $letter-spacing-base;
   @include for-size(desktop) {
+    margin-right: 93px;
+
     font-size: 26px;
     line-height: 1.2;
   }

@@ -10,8 +10,14 @@
   /* центрируем элементы в хедере по вертикали, 
  добавляем паддинги уменьшены отступы на ширину border-top и border-bottom*/
   align-items: center;
-  padding-top: 23px;
-  padding-bottom: 24px;
+  @include for-size(tablet) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @include for-size(desktop) {
+    padding-top: 23px;
+    padding-bottom: 24px;
+  }
 
   background-color: $white-color;
   font-weight: $font-weight-third;
@@ -52,7 +58,13 @@
         width: 100%;
         height: 4px;
         left: 0;
-        bottom: -27px;
+        @include for-size(tablet) {
+          bottom: -31px;
+        }
+        @include for-size(desktop) {
+          bottom: -27px;
+        }
+
         background: $accent-color;
         border-radius: 2px;
         opacity: 1;
@@ -62,17 +74,28 @@
   }
 }
 /* центрируем элементы */
-.navigation,
-.contact {
-  @extend %flex;
-  align-items: center;
+.navigation {
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 .contact {
+  display: block;
   @extend %list;
-  margin-left: auto;
+  @include for-size(desktop) {
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
   &__item {
     @extend %flex;
-
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      @include font(12px, 1.17, $font-weight-third);
+    }
     transition: color $time-animation $function-animation;
   }
   &__item:hover,
@@ -84,13 +107,22 @@
     @extend %big-paddings;
   }
   & li + li {
-    margin-left: 30px;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-top: 10px;
+    }
+    @include for-size(desktop) {
+      margin-left: 30px;
+    }
   } /* иконка почты */
   &__mail-icon {
     align-self: center;
     margin: 0 10px 0 0;
     width: 16px;
     height: 12px;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      width: 14px;
+      height: 10px;
+    }
     fill: currentColor;
   }
   /* иконка телефона */
@@ -100,6 +132,10 @@
     margin: 0 10px 0 0;
     width: 10px;
     height: 16px;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      width: 10px;
+      height: 14px;
+    }
     fill: currentColor;
   }
 }
