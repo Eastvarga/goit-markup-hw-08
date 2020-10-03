@@ -3,13 +3,18 @@
 с центрированием элементов по горизонтали*/
 
 .filter {
+  width: 100%;
   @extend %flex;
   @extend %list;
-  margin: 0 auto;
-  justify-content: center;
+  margin: -8px -4px;
+  justify-content: flex-start;
+
+  @include for-size(tablet) {
+    justify-content: center;
+  }
   /* задаем отступы для всех кроме последней кнопок*/
-  &__item:not(:last-child) {
-    margin-right: 8px;
+  &__item {
+    margin: 8px 4px;
   }
   /* filter button задаем шрифты и геометрию кнопок */
   &__button {
@@ -21,9 +26,8 @@
     background-color: $alt-bg-color;
     font-family: inherit;
     font-style: normal;
-    font-weight: $font-weight-third;
-    font-size: $font-size-second;
-    line-height: 1.62;
+    @include font($font-size-second, 1.62, $font-weight-third);
+
     letter-spacing: $letter-spacing-base;
     /* animation */
     transition: all $time-animation $function-animation;

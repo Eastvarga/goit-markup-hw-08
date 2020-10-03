@@ -38,11 +38,9 @@
   margin: 0 0 20px 0;
   /* padding-top: 12px; */
   color: $white-color;
-  font-weight: $font-weight-base;
-  font-size: $font-size-base;
-  line-height: $line-height-second;
+  @include font($font-size-base, $line-height-second, $font-weight-base);
   letter-spacing: $letter-spacing-base;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
 }
 /* focus animation icon input */

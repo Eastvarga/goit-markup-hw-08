@@ -76,12 +76,12 @@ a {
     //   padding: 94px 0;
     // }
   }
-  &--pudding {
-    // padding: 60px 0;
-    // @include for-size(desktop) {
-    //   padding: 94px 0;
-    // }
-  }
+  // &--pudding {
+  // padding: 60px 0;
+  // @include for-size(desktop) {
+  //   padding: 94px 0;
+  // }
+  // }
 }
 
 /* modal window */
@@ -136,39 +136,48 @@ a {
   }
   &--submit {
     width: 200px;
-    margin-left: 12px;
     padding: 10px 0px 10px 29px;
     background-image: url("../img/icon-telegram.svg");
     background-repeat: no-repeat;
     background-position: center right 28px;
     text-align: left;
+    @media screen and (max-width: 1199px) {
+      display: block;
+      margin: 20px auto 0;
+    }
+    @include for-size(desktop) {
+      margin-left: 12px;
+    }
   }
 }
 
 /* создаем контейнер для контента */
 .container {
-  @include for-size(mobile) {
-    max-width: 480px;
-  }
-  @include for-size(tablet) {
-    max-width: 768px;
-  }
-  @include for-size(desktop) {
-    max-width: 1200px;
-  }
+  width: 480px;
 
   padding: 0 15px;
   margin: 0 auto;
+
+  @include for-size(tablet) {
+    width: 768px;
+  }
+  @include for-size(desktop) {
+    width: 1200px;
+  }
+
   &--header {
     @extend %flex;
   }
   &--footer {
-    @extend %flex;
-    align-items: baseline;
+    @include for-size(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
   }
   &--forfilter {
     @extend %flex;
-    padding: 94px 0 50px;
+    padding: 94px 15px 50px;
   }
   &--forprojects {
     @extend %flex;
@@ -227,11 +236,14 @@ a {
 .logo {
   margin-right: 93px;
 
+  @include font(24px, 1.17, $font-weight-base);
   font-family: $font-logo;
-  font-weight: $font-weight-base;
-  font-size: 26px;
-  line-height: 1.2;
+
   letter-spacing: $letter-spacing-base;
+  @include for-size(desktop) {
+    font-size: 26px;
+    line-height: 1.2;
+  }
   &--header {
     color: $title-text-color;
   }

@@ -6,7 +6,7 @@
   padding: 60px 0;
   margin: 0 auto;
   background-color: $secondary-bg-color;
-
+  align-content: center;
   // @include for-size(mobile) {
   //   max-width: 480px;
   // }
@@ -21,7 +21,20 @@
 /* делаем контент лого+адресс шириной на четверть от ширины страницы */
 .address {
   display: block;
-  width: calc((100% - 30px * 3) / 4);
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
+
+  // width: calc((100% - 30px * 3) / 4);
+  @include for-size(tablet) {
+    width: calc((100% - 30px * 2) / 2);
+  }
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+  }
+  @include for-size(desktop) {
+    width: calc((100% - 30px * 3) / 4);
+  }
   &__holder {
     color: $white-color;
     font-style: normal;
@@ -33,10 +46,12 @@
   /* footer contacts links */
   /* задаем ссылкам вертикальные отступы */
   &__link {
-    color: $footer-link-color;
-    font-style: normal;
     display: block;
     margin: 9px 0 0;
+
+    color: $footer-link-color;
+    font-style: normal;
+
     transition: color $time-animation $function-animation;
 
     &:hover,
@@ -48,12 +63,38 @@
 
 // кусок содержащий ссылки на социалки
 .follow {
-  @extend %flex;
-  width: calc((100% - 30px * 3) / 4);
-  margin: 0 0 0 30px;
+  display: block;
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+    justify-content: center;
+  }
+
+  // width: calc((100% - 30px * 3) / 4);
+  // margin: 0 0 0 30px;
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc((100% - 30px * 2) / 2);
+    margin: 0 0 0 30px;
+  }
+
+  @include for-size(desktop) {
+    width: calc((100% - 30px * 3) / 4);
+  }
+
+  &__title {
+    @extend %footer-title;
+
+    @include for-size(desktop) {
+      text-align: left;
+    }
+  }
   &__list {
     @extend %list;
     @extend %flex;
+    justify-content: center;
+    @include for-size(desktop) {
+    }
   }
   &__link {
     @extend %flex;
@@ -74,20 +115,31 @@
       margin-left: 10px;
     }
   }
-  &__title {
-    @extend %footer-title;
-  }
 }
 
 /* заголовок соцсетей*/
 /* submit-footer div */
 .submit {
-  @extend %flex;
-  width: calc((100% - 30px) / 2);
-  margin-left: 30px;
+  @media screen and (min-width: 481px) and (max-width: 1199px) {
+    width: 450px;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 1199px) {
+    padding-bottom: 60px;
+  }
+  @include for-size(desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc((100% - 30px) / 2);
+    margin-left: 30px;
+  }
+
   &__title {
     width: 100%;
     @extend %footer-title;
+    @include for-size(desktop) {
+      text-align: left;
+    }
   }
   &__label {
     // max-width: 358px;
