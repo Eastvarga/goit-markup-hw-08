@@ -6,11 +6,13 @@
   background-color: transparent;
   fill: #000;
   transition: fill $time-animation $function-animation;
+
   @include for-size(tablet) {
     display: none;
   }
-  //   &__icon {
-  //   }
+  // &__icon {
+
+  // }
   //   &__open {
   //     // display: block;
   //   }
@@ -34,18 +36,35 @@
 
 .menu-container {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: tomato;
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 60px 0;
+    margin: 0;
+    text-align: center;
+    background-color: $white-color;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+      0px 1px 3px rgba(0, 0, 0, 0.16);
+  }
+  @include for-size(tablet) {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &.is-open {
     display: block;
-    @include for-size(tablet) {
-      display: none;
+  }
+  // &__navigation {
+  //   // outline: red solid 1px;
+  // }
+  &__contacts {
+    @media screen and (max-width: 767px) {
+      margin-top: 60px;
     }
+    // outline: red solid 1px;
   }
 }

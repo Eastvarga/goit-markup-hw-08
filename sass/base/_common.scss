@@ -13,7 +13,10 @@ body {
   line-height: $line-height-base;
   letter-spacing: $letter-spacing-base;
 
-  padding-top: 80px;
+  padding-top: 60px;
+  @include for-size(desktop) {
+    padding-top: 80px;
+  }
 }
 body.modal-open {
   overflow: hidden;
@@ -148,9 +151,11 @@ a {
 
   &--header {
     @extend %flex;
-    @include for-size(tablet) {
-      justify-content: space-between;
-      align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 767px) {
+      padding: 10px 15px;
+      
     }
   }
   &--footer {

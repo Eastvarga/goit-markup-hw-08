@@ -12,9 +12,7 @@
   align-items: center;
 
   background-color: $white-color;
-  font-weight: $font-weight-third;
-  font-size: $font-size-base;
-  line-height: $line-height-second;
+  @include font(18px, 1.17, $font-weight-third);
   letter-spacing: 0.02em;
   /* добавлям линии согласно макета */
   border-top: 1px solid #fff;
@@ -23,6 +21,9 @@
   @include for-size(tablet) {
     padding-top: 20px;
     padding-bottom: 20px;
+
+    font-size: $font-size-base;
+    line-height: $line-height-second;
   }
   @include for-size(desktop) {
     padding-top: 23px;
@@ -40,6 +41,9 @@
   }
 
   & li + li {
+    @media screen and (max-width: 767px) {
+      margin-top: 52px;
+    }
     @include for-size(tablet) {
       margin-left: 50px;
     }
@@ -65,6 +69,7 @@
         width: 100%;
         height: 4px;
         left: 0;
+        bottom: -10px;
         @include for-size(tablet) {
           bottom: -31px;
         }
@@ -82,19 +87,14 @@
 }
 /* центрируем элементы */
 .navigation {
-  @include flexbox(space-between, center);
-  // падинги для мобильного хедера
-  @media screen and (max-width: 767px) {
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
+  display: block;
   @include for-size(tablet) {
-    align-items: center;
+    @include flexbox(space-between, center);
   }
 }
 .contact {
-  display: none;
-  // display: block;
+  // display: none;
+  display: block;
   @extend %list;
   @include for-size(desktop) {
     margin-left: auto;
@@ -105,10 +105,12 @@
 
   &__item {
     @extend %flex;
+    justify-content: center;
+    transition: color $time-animation $function-animation;
     @media screen and (min-width: 768px) and (max-width: 1199px) {
       @include font(12px, 1.17, $font-weight-third);
+      justify-content: flex-start;
     }
-    transition: color $time-animation $function-animation;
   }
   &__item:hover,
   &__item:focus {
@@ -119,35 +121,43 @@
     @extend %big-paddings;
   }
   & li + li {
+    margin-top: 16px;
     @media screen and (min-width: 768px) and (max-width: 1199px) {
       margin-top: 10px;
     }
     @include for-size(desktop) {
+      margin-top: 0;
       margin-left: 30px;
     }
   } /* иконка почты */
   &__mail-icon {
     align-self: center;
     margin: 0 10px 0 0;
-    width: 16px;
-    height: 12px;
-    @media screen and (min-width: 768px) and (max-width: 1199px) {
-      width: 14px;
-      height: 10px;
-    }
+    width: 14px;
+    height: 10px;
     fill: currentColor;
+    @include for-size(desktop) {
+      width: 16px;
+      height: 12px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-right: 8px;
+    }
   }
   /* иконка телефона */
   &__phone-icon {
-    display: block;
+    // display: block;
     align-self: center;
     margin: 0 10px 0 0;
     width: 10px;
-    height: 16px;
-    @media screen and (min-width: 768px) and (max-width: 1199px) {
-      width: 10px;
-      height: 14px;
-    }
+    height: 14px;
     fill: currentColor;
+    @include for-size(desktop) {
+      width: 10px;
+      height: 16px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-right: 8px;
+    }
   }
 }

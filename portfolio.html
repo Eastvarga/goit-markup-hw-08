@@ -19,76 +19,85 @@
     <header class="header">
       <!-- div container -->
       <div class="container container--header">
-        <!-- navigation -->
-        <nav class="navigation">
-          <!-- Logo -->
-          <a class="logo logo--header" href="./index.html"
-            ><span class="logo--accent">Web</span>Studio</a
+        <!-- Logo -->
+        <a class="logo logo--header" href="./index.html">
+          <span class="logo--accent">Web</span>Studio</a
+        >
+        <button
+          type="button"
+          class="burger-menu"
+          aria-controls="menu-container"
+          aria-expanded="false"
+          data-menu-button
+        >
+          <svg
+            class="berger-menu__icon"
+            width="40"
+            height="40"
+            aria-label="Переключатель мобильного меню"
           >
-          <button class="burger-menu" type="button" data-menu-button>
-            <svg
-              class="berger-menu__icon"
-              width="40"
-              height="40"
-              aria-expanded="false"
-              aria-label="Переключатель мобильного меню"
-            >
-              <use
-                class="burger__open"
-                href="./img/icon-sprite.svg#icon-header-menu"
-              ></use>
-              <use
-                class="burger__close"
-                href="./img/icon-sprite.svg#icon-header-close"
-              ></use>
-            </svg>
-          </button>
-          <div class="menu-container" data-menu>Content</div>
-
-          <!-- Main links -->
-          <ul class="links">
-            <li>
-              <a class="links__item links__item--big" href="./index.html"
-                >Студия</a
-              >
-            </li>
-            <li>
-              <a
-                class="links__item links__item--big links__item--current"
-                href="./portfolio.html"
-                >Портфолио</a
-              >
-            </li>
-            <li>
-              <a class="links__item links__item--big" href="">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        <!-- Contacts -->
-        <ul class="contact">
-          <li>
-            <a
-              class="contact__item contact__item--big"
-              href="mailto:info@devstudio.com"
-            >
-              <svg class="contact__mail-icon">
-                <use href="./img/icon-sprite.svg#icon-mail"></use>
-              </svg>
-              <span>info&commat;devstudio.com</span>
-            </a>
-          </li>
-          <li>
-            <a
-              class="contact__item contact__item--big"
-              href="tel:+380961111111"
-            >
-              <svg class="contact__phone-icon">
-                <use href="./img/icon-sprite.svg#icon-phone"></use>
-              </svg>
-              <span>+38 096 111 11 11</span></a
-            >
-          </li>
-        </ul>
+            <use
+              class="burger__open"
+              href="./img/icon-sprite.svg#icon-header-menu"
+            ></use>
+            <use
+              class="burger__close"
+              href="./img/icon-sprite.svg#icon-header-close"
+            ></use>
+          </svg>
+        </button>
+        <div class="menu-container" id="menu-container" data-menu>
+          <div class="menu-container__navigation">
+            <!-- navigation -->
+            <nav class="navigation">
+              <!-- Main links -->
+              <ul class="links">
+                <li>
+                  <a class="links__item links__item--big" href="./index.html"
+                    >Студия</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="links__item links__item--big links__item--current"
+                    href="./portfolio.html"
+                    >Портфолио</a
+                  >
+                </li>
+                <li>
+                  <a class="links__item links__item--big" href="">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="menu-container__contacts">
+            <!-- Contacts -->
+            <ul class="contact">
+              <li>
+                <a
+                  class="contact__item contact__item--big"
+                  href="mailto:info@devstudio.com"
+                >
+                  <svg class="contact__mail-icon">
+                    <use href="./img/icon-sprite.svg#icon-mail"></use>
+                  </svg>
+                  <span>info&commat;devstudio.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="contact__item contact__item--big"
+                  href="tel:+380961111111"
+                >
+                  <svg class="contact__phone-icon">
+                    <use href="./img/icon-sprite.svg#icon-phone"></use>
+                  </svg>
+                  <span>+38 096 111 11 11</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
     <!-- Main -->
