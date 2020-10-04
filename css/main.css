@@ -304,35 +304,6 @@ a {
   letter-spacing: 0.03em;
 }
 
-/* modal window */
-/* hiden */
-/* background modal */
-.backdrop {
-  position: fixed;
-  z-index: 4;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* window animation */
-}
-
-.backdrop.is-hidden .modal {
-  opacity: 0;
-  -webkit-transform: translate(-50%, -50%) scale(0.5);
-          transform: translate(-50%, -50%) scale(0.5);
-}
-
-.backdrop.is-hidden {
-  /* visibility: hidden; */
-  opacity: 0;
-  pointer-events: none;
-}
-
 /* hero button кнопка общая*/
 .button {
   -webkit-box-sizing: border-box;
@@ -556,7 +527,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   z-index: 2;
   /* центрируем элементы в хедере по вертикали, 
  добавляем паддинги уменьшены отступы на ширину border-top и border-bottom*/
@@ -571,12 +542,6 @@ a {
   /* добавлям линии согласно макета */
   border-top: 1px solid #fff;
   border-bottom: 1px solid #ececec;
-}
-
-@media screen and (max-width: 767px) {
-  .header {
-    position: relative;
-  }
 }
 
 @media (min-width: 768px) {
@@ -663,6 +628,13 @@ a {
           align-items: center;
 }
 
+@media screen and (max-width: 767px) {
+  .navigation {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
 @media (min-width: 768px) {
   .navigation {
     -webkit-box-align: center;
@@ -672,7 +644,7 @@ a {
 }
 
 .contact {
-  display: block;
+  display: none;
   /* расширяем зону активации ссылок в шапке для лучшего юзабилити */
   /* иконка почты */
   /* иконка телефона */
@@ -928,7 +900,6 @@ a {
 .team__item {
   display: block;
   margin: 15px;
-  width: 100%;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -1428,12 +1399,40 @@ a {
   color: #ffffff;
 }
 
+/* modal window */
+/* hiden */
+/* background modal */
+.backdrop {
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 94px 15px;
+  opacity: 1;
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* window animation */
+}
+
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+          transform: translate(-50%, -50%) scale(0.5);
+}
+
+.backdrop.is-hidden {
+  /* visibility: hidden; */
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* modal form */
 /* сама модальная форма */
 .modal {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  position: relative;
   padding: 40px;
   width: 450px;
   background-color: #ffffff;
@@ -1441,8 +1440,6 @@ a {
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   opacity: 1;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
   -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1458,6 +1455,16 @@ a {
   /* текст коментариев */
   /* элемент с чекбокcом и лейбелом к ниму */
   /* при чеке на чекбоксе применить стили "чекнутый чекбокс" */
+}
+
+@media (min-width: 768px) {
+  .modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 @media (min-width: 1200px) {

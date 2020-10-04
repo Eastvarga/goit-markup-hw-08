@@ -1,27 +1,45 @@
+/* modal window */
+/* hiden */
+/* background modal */
+.backdrop {
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 94px 15px;
+  opacity: 1;
+  transition: opacity $time-animation $function-animation;
+
+  /* window animation */
+  &.is-hidden .modal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  &.is-hidden {
+    /* visibility: hidden; */
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 /* modal form */
 /* сама модальная форма */
 .modal {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-
+  position: relative;
   padding: 40px;
   width: 450px;
   // @include for-size(mobile) {
   //   width: 450px;
   // }
-  @include for-size(desktop) {
-    width: 528px;
-    height: 581px;
-  }
-
   background-color: $white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
   transition: opacity $time-animation $function-animation,
     transform $time-animation $function-animation;
 
@@ -29,6 +47,18 @@
   line-height: 1.17;
   letter-spacing: 0.01em;
   text-align: center;
+
+  @include for-size(tablet) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  @include for-size(desktop) {
+    width: 528px;
+    height: 581px;
+  }
+
   /* Зазывалка модальной формы */
   &__title {
     display: block;

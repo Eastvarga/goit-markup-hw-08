@@ -4,23 +4,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
 
   z-index: 2;
   /* центрируем элементы в хедере по вертикали, 
  добавляем паддинги уменьшены отступы на ширину border-top и border-bottom*/
   align-items: center;
-  @media screen and (max-width: 767px) {
-    position: relative;
-  }
-  @include for-size(tablet) {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  @include for-size(desktop) {
-    padding-top: 23px;
-    padding-bottom: 24px;
-  }
 
   background-color: $white-color;
   font-weight: $font-weight-third;
@@ -30,6 +19,15 @@
   /* добавлям линии согласно макета */
   border-top: 1px solid #fff;
   border-bottom: 1px solid #ececec;
+
+  @include for-size(tablet) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @include for-size(desktop) {
+    padding-top: 23px;
+    padding-bottom: 24px;
+  }
 }
 
 /* навигация по сайту */
@@ -85,13 +83,18 @@
 /* центрируем элементы */
 .navigation {
   @include flexbox(space-between, center);
-
+  // падинги для мобильного хедера
+  @media screen and (max-width: 767px) {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
   @include for-size(tablet) {
     align-items: center;
   }
 }
 .contact {
-  display: block;
+  display: none;
+  // display: block;
   @extend %list;
   @include for-size(desktop) {
     margin-left: auto;
