@@ -6,15 +6,15 @@
   top: 50%;
 
   padding: 40px;
-  // width: 100%;
-  @include for-size(mobile) {
-    width: 450px;
-  }
+  width: 450px;
+  // @include for-size(mobile) {
+  //   width: 450px;
+  // }
   @include for-size(desktop) {
     width: 528px;
+    height: 581px;
   }
 
-  height: 581px;
   background-color: $white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -33,11 +33,12 @@
   &__title {
     display: block;
     margin: 0 0 12px 0;
-    font-weight: $font-weight-base;
-    font-size: 20px;
-    line-height: 1.15;
+    @include font(20px, 1.5, $font-weight-base);
     letter-spacing: $letter-spacing-base;
     color: $title-text-color;
+    @include for-size(desktop) {
+      line-height: 1.15;
+    }
   }
   /* описания инпутов расположить над инпутами */
   &__text {
@@ -47,13 +48,15 @@
     left: 0;
     top: 0;
     margin: 0;
+    font-size: 12px;
+    line-height: 1.17;
   }
   /* оформление лейбелов */
   &__label {
     position: relative;
     display: block;
     margin: 0 0 10px 0;
-    padding-top: 18px;
+    padding-top: 17px;
     width: 100%;
   }
   /* оформление инпутов */
@@ -78,16 +81,15 @@
     &:focus + .modal__icon {
       fill: $accent-color;
     }
+    &:focus ~ .modal__text {
+      color: $accent-color;
+    }
   }
 
   &__icon {
     @extend %modal-icons;
     left: 12px;
     top: 50%;
-  }
-
-  &__comments:focus {
-    @extend %modal-focus;
   }
 
   &__textarea {
@@ -97,6 +99,10 @@
     padding-top: 18px;
     width: 100%;
     margin-bottom: 20px;
+    @media screen and (max-width: 1199px) {
+      font-size: 14px;
+      line-height: 1.14;
+    }
   }
   /* текст коментариев */
   &__comments {
@@ -108,21 +114,34 @@
     resize: none;
     outline-color: transparent;
     transition: all $time-animation $function-animation;
+
+    &:focus {
+      @extend %modal-focus;
+    }
+    &:focus ~ .modal__text {
+      color: $accent-color;
+    }
   }
   /* элемент с чекбокcом и лейбелом к ниму */
   &__checkbox {
     position: relative;
-    width: calc(100% - 23px);
+    width: 100%;
     padding: 0;
-    margin: 0 11px 30px 12px;
+    margin: 0 0 30px 0;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    @include font(12px, 1.17, $font-weight-second);
 
-    font-weight: normal;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
+    @include for-size(desktop) {
+      @include font($font-size-base, $line-height-base, $line-height-base);
+      width: calc(100% - 23px);
+
+      margin-left: 11px;
+      margin-right: 12px;
+    }
+
     letter-spacing: $letter-spacing-base;
     /* стиль "нечекнутый чекбокс" */
     /* .icon-checkbox */

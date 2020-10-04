@@ -41,10 +41,11 @@
   padding: 0;
   margin: 0;
   background-color: tomato;
-  @include for-size(tablet) {
-    display: none;
-  }
+
   &.is-open {
     display: block;
+    @include for-size(tablet) {
+      display: none;
+    }
   }
 }

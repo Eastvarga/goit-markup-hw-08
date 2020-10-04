@@ -17,8 +17,7 @@
 
 /* создаем флекс элементы,
  даем возможность переноса элементов на другую строку */
-.container--header, .container--footer, .container--forfilter, .container--forprojects, .social, .social__link, .links, .navigation,
-.contact, .contact__item, .features__holder, .whatwedo, .clients, .follow, .follow__list, .follow__link, .follow__item, .submit, .filter, .projects {
+.container--header, .container--forfilter, .container--forprojects, .social, .social__link, .contact__item, .features__holder, .whatwedo, .clients, .follow__list, .follow__link, .follow__item, .filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,16 +26,17 @@
 }
 
 /* убираем "точечки", марджины и левый паддинг в списках */
-.social, .links,
-.contact, .features, .whatwedo, .team, .clients, .follow__list, .filter, .projects {
+.social, .links, .contact, .features, .whatwedo, .team, .clients, .follow__list, .filter, .projects {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
-.links__item--big, .contact__item--big {
-  margin: 0;
-  padding: 6px 0;
+@media (min-width: 1200px) {
+  .links__item--big, .contact__item--big {
+    margin: 0;
+    padding: 6px 0;
+  }
 }
 
 .features__title, .whatwedo__text {
@@ -51,11 +51,11 @@
   margin: 0 0 20px 0;
   /* padding-top: 12px; */
   color: #ffffff;
-  font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
+  font-weight: 700;
   letter-spacing: 0.03em;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -359,12 +359,24 @@ a {
 
 .button--submit {
   width: 200px;
-  margin-left: 12px;
   padding: 10px 0px 10px 29px;
   background-image: url("../img/icon-telegram.svg");
   background-repeat: no-repeat;
   background-position: center right 28px;
   text-align: left;
+}
+
+@media screen and (max-width: 1199px) {
+  .button--submit {
+    display: block;
+    margin: 20px auto 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button--submit {
+    margin-left: 12px;
+  }
 }
 
 /* создаем контейнер для контента */
@@ -373,32 +385,68 @@ a {
   margin: 0 auto;
 }
 
-@media (min-width: 480px) {
+@media screen and (max-width: 479px) {
   .container {
     max-width: 480px;
   }
 }
 
+@media (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    width: 768px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1200px;
+    width: 1200px;
   }
 }
 
-.container--footer {
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+@media (min-width: 768px) {
+  .container--header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .container--footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
 }
 
 .container--forfilter {
-  padding: 94px 0 50px;
+  padding: 60px 15px 40px;
+}
+
+@media (min-width: 768px) {
+  .container--forfilter {
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container--forfilter {
+    padding: 94px 15px 50px;
+  }
 }
 
 .container--forprojects {
@@ -459,12 +507,25 @@ a {
 
 /* раскрасим логотип */
 .logo {
-  margin-right: 93px;
-  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  line-height: 1.17;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
+  font-family: "Raleway", sans-serif;
   letter-spacing: 0.03em;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    margin-right: 88px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo {
+    margin-right: 93px;
+    font-size: 26px;
+    line-height: 1.2;
+  }
 }
 
 .logo--header {
@@ -502,8 +563,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 23px;
-  padding-bottom: 24px;
   background-color: #ffffff;
   font-weight: 500;
   font-size: 14px;
@@ -514,9 +573,41 @@ a {
   border-bottom: 1px solid #ececec;
 }
 
+@media screen and (max-width: 767px) {
+  .header {
+    position: relative;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    padding-top: 23px;
+    padding-bottom: 24px;
+  }
+}
+
 /* навигация по сайту */
-.links li + li {
-  margin-left: 50px;
+@media (min-width: 768px) {
+  .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .links li + li {
+    margin-left: 50px;
+  }
 }
 
 .links__item {
@@ -539,26 +630,66 @@ a {
   width: 100%;
   height: 4px;
   left: 0;
-  bottom: -27px;
   background: #2196f3;
   border-radius: 2px;
   opacity: 1;
   /* transition: opacity $time-animation $function-animation; */
 }
 
+@media (min-width: 768px) {
+  .links__item--current::after {
+    bottom: -31px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .links__item--current::after {
+    bottom: -27px;
+  }
+}
+
 /* центрируем элементы */
-.navigation,
-.contact {
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+@media (min-width: 768px) {
+  .navigation {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .contact {
-  margin-left: auto;
+  display: block;
   /* расширяем зону активации ссылок в шапке для лучшего юзабилити */
   /* иконка почты */
   /* иконка телефона */
+}
+
+@media (min-width: 1200px) {
+  .contact {
+    margin-left: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .contact__item {
@@ -566,12 +697,28 @@ a {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .contact__item {
+    font-size: 12px;
+    line-height: 1.17;
+    font-weight: 500;
+  }
+}
+
 .contact__item:hover, .contact__item:focus {
   color: #2196f3;
 }
 
-.contact li + li {
-  margin-left: 30px;
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .contact li + li {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact li + li {
+    margin-left: 30px;
+  }
 }
 
 .contact__mail-icon {
@@ -584,6 +731,13 @@ a {
   fill: currentColor;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .contact__mail-icon {
+    width: 14px;
+    height: 10px;
+  }
+}
+
 .contact__phone-icon {
   display: block;
   -ms-flex-item-align: center;
@@ -593,6 +747,13 @@ a {
   width: 10px;
   height: 16px;
   fill: currentColor;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .contact__phone-icon {
+    width: 10px;
+    height: 14px;
+  }
 }
 
 /* Секция героя */
@@ -756,6 +917,9 @@ a {
 /* задаем ширину контента, тень карточке,и ориентацию текста */
 .team {
   margin: -15px;
+  font-size: 16px;
+  line-height: 1.19;
+  font-weight: 400;
   /* our team title font,
  задаем марджин до картинки и до абзаца*/
   /* отступ для формы карточки */
@@ -787,8 +951,10 @@ a {
 
 .team__title {
   margin: 30px 0 10px;
-  color: #212121;
+  font-size: 1em;
   font-weight: 500;
+  color: #212121;
+  letter-spacing: 0.03em;
 }
 
 .team__text {
@@ -906,15 +1072,40 @@ a {
   padding: 60px 0;
   margin: 0 auto;
   background-color: #2f303a;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 /* адресс */
 /* делаем контент лого+адресс шириной на четверть от ширины страницы */
 .address {
   display: block;
-  width: calc((100% - 30px * 3) / 4);
   /* footer contacts links */
   /* задаем ссылкам вертикальные отступы */
+}
+
+@media screen and (max-width: 1199px) {
+  .address {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .address {
+    width: calc((100% - 30px * 2) / 2);
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .address {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .address {
+    width: calc((100% - 30px * 3) / 4);
+  }
 }
 
 .address__holder {
@@ -928,10 +1119,10 @@ a {
 }
 
 .address__link {
-  color: rgba(255, 255, 255, 0.6);
-  font-style: normal;
   display: block;
   margin: 9px 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -941,8 +1132,46 @@ a {
 }
 
 .follow {
-  width: calc((100% - 30px * 3) / 4);
-  margin: 0 0 0 30px;
+  display: block;
+}
+
+@media screen and (max-width: 1199px) {
+  .follow {
+    margin-bottom: 60px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .follow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: calc((100% - 30px * 2) / 2);
+    margin: 0 0 0 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .follow {
+    width: calc((100% - 30px * 3) / 4);
+  }
+}
+
+@media (min-width: 1200px) {
+  .follow__title {
+    text-align: left;
+  }
+}
+
+.follow__list {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .follow__link {
@@ -964,13 +1193,39 @@ a {
 
 /* заголовок соцсетей*/
 /* submit-footer div */
-.submit {
-  width: calc((100% - 30px) / 2);
-  margin-left: 30px;
+@media screen and (min-width: 481px) and (max-width: 1199px) {
+  .submit {
+    width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .submit {
+    padding-bottom: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .submit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: calc((100% - 30px) / 2);
+    margin-left: 30px;
+  }
 }
 
 .submit__title {
   width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .submit__title {
+    text-align: left;
+  }
 }
 
 .submit__label {
@@ -1001,16 +1256,25 @@ a {
 /* задаем фильтрбоксу вертикальные отступы 
 с центрированием элементов по горизонтали*/
 .filter {
-  margin: 0 auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 100%;
+  margin: -8px -4px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   /* задаем отступы для всех кроме последней кнопок*/
   /* filter button задаем шрифты и геометрию кнопок */
 }
 
-.filter__item:not(:last-child) {
-  margin-right: 8px;
+@media (min-width: 768px) {
+  .filter {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.filter__item {
+  margin: 8px 4px;
 }
 
 .filter__button {
@@ -1021,9 +1285,9 @@ a {
   background-color: #f5f4fa;
   font-family: inherit;
   font-style: normal;
-  font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
+  font-weight: 500;
   letter-spacing: 0.03em;
   /* animation */
   -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1040,6 +1304,8 @@ a {
 
 /* portfolio projects задаем основной шрифт списка проектов */
 .projects {
+  display: block;
+  margin: -15px;
   font-size: 16px;
   line-height: 1.87;
   /* задаем ширину контента для 3 элементов в строке */
@@ -1048,18 +1314,39 @@ a {
   /* projects title */
 }
 
+@media screen and (max-width: 767px) {
+  .projects {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .projects__item {
-  width: calc((100% - 30px * 2) / 3);
-  /* каждый не первый из трех элементов li будет отодвигаться от левого соседа на 30 пикселей */
+  display: block;
+  width: 100%;
+  margin: 15px;
   /* каждый после третьего элемент li будет отодвигаться от верхней строки на 30 пикселей */
 }
 
-.projects__item:not(:nth-child(3n + 1)) {
-  margin-left: 30px;
+@media (min-width: 768px) {
+  .projects__item {
+    width: calc((100% - 30px * 2) / 2);
+  }
 }
 
-.projects__item:nth-child(n + 4) {
-  margin-top: 30px;
+@media (min-width: 1200px) {
+  .projects__item {
+    width: calc((1200px - 30px * 3) / 3);
+  }
 }
 
 .projects__link {
@@ -1094,7 +1381,7 @@ a {
 
 .projects__description {
   margin: 0;
-  padding: 20px 24px;
+  padding: 20px 22px;
   text-align: left;
   border: 1px solid #eeeeee;
   border-top-style: none;
@@ -1148,7 +1435,7 @@ a {
   left: 50%;
   top: 50%;
   padding: 40px;
-  height: 581px;
+  width: 450px;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -1173,26 +1460,27 @@ a {
   /* при чеке на чекбоксе применить стили "чекнутый чекбокс" */
 }
 
-@media (min-width: 480px) {
-  .modal {
-    width: 450px;
-  }
-}
-
 @media (min-width: 1200px) {
   .modal {
     width: 528px;
+    height: 581px;
   }
 }
 
 .modal__title {
   display: block;
   margin: 0 0 12px 0;
-  font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
+  font-weight: 700;
   letter-spacing: 0.03em;
   color: #212121;
+}
+
+@media (min-width: 1200px) {
+  .modal__title {
+    line-height: 1.15;
+  }
 }
 
 .modal__text {
@@ -1201,13 +1489,15 @@ a {
   left: 0;
   top: 0;
   margin: 0;
+  font-size: 12px;
+  line-height: 1.17;
 }
 
 .modal__label {
   position: relative;
   display: block;
   margin: 0 0 10px 0;
-  padding-top: 18px;
+  padding-top: 17px;
   width: 100%;
 }
 
@@ -1235,6 +1525,10 @@ a {
   fill: #2196f3;
 }
 
+.modal__input:focus ~ .modal__text {
+  color: #2196f3;
+}
+
 .modal__icon {
   left: 12px;
   top: 50%;
@@ -1249,6 +1543,13 @@ a {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 1199px) {
+  .modal__textarea {
+    font-size: 14px;
+    line-height: 1.14;
+  }
+}
+
 .modal__comments {
   width: 100%;
   height: 120px;
@@ -1261,11 +1562,15 @@ a {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal__comments:focus ~ .modal__text {
+  color: #2196f3;
+}
+
 .modal__checkbox {
   position: relative;
-  width: calc(100% - 23px);
+  width: 100%;
   padding: 0;
-  margin: 0 11px 30px 12px;
+  margin: 0 0 30px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1274,12 +1579,23 @@ a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.17;
+  font-weight: 400;
   letter-spacing: 0.03em;
   /* стиль "нечекнутый чекбокс" */
   /* .icon-checkbox */
+}
+
+@media (min-width: 1200px) {
+  .modal__checkbox {
+    font-size: 14px;
+    line-height: 1.71;
+    font-weight: 1.71;
+    width: calc(100% - 23px);
+    margin-left: 11px;
+    margin-right: 12px;
+  }
 }
 
 .modal__checkbox::after {
@@ -1335,5 +1651,61 @@ a {
 
 .close:hover .close__icon {
   fill: #2196f3;
+}
+
+.burger-menu {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  fill: #000;
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .burger-menu {
+    display: none;
+  }
+}
+
+.burger-menu .burger__close {
+  display: none;
+}
+
+.burger-menu.is-open .burger__open {
+  display: none;
+}
+
+.burger-menu.is-open .burger__close {
+  display: block;
+}
+
+.burger-menu:hover, .burger-menu:focus {
+  fill: #2196f3;
+}
+
+.menu-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: tomato;
+}
+
+.menu-container.is-open {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .menu-container.is-open {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

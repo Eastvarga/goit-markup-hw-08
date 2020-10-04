@@ -7,6 +7,8 @@
 .team {
   @extend %list;
   margin: -15px;
+  @include font($font-size-second, 1.19, $font-weight-second);
+
   &__item {
     display: block;
     margin: 15px;
@@ -32,8 +34,10 @@
  задаем марджин до картинки и до абзаца*/
   &__title {
     margin: 30px 0 10px;
-    color: $title-text-color;
+    font-size: 1em;
     font-weight: $font-weight-third;
+    color: $title-text-color;
+    letter-spacing: $letter-spacing-base;
   }
   /* отступ для формы карточки */
   &__text {

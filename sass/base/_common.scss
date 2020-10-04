@@ -153,11 +153,15 @@ a {
 
 /* создаем контейнер для контента */
 .container {
-  width: 480px;
-
   padding: 0 15px;
   margin: 0 auto;
 
+  @media screen and (max-width: 479px) {
+    max-width: 480px;
+  }
+  @include for-size(mobile) {
+    width: 480px;
+  }
   @include for-size(tablet) {
     width: 768px;
   }
