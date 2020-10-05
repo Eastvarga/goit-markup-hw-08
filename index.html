@@ -181,20 +181,63 @@
           <ul class="whatwedo">
             <li class="whatwedo__item">
               <div class="whatwedo__holder">
-                <img src="./img/some-img-1.jpg" alt="Desctop" width="370" />
+                <picture>
+                  <source
+                    srcset="
+                      ./img/desktop/some-img-1.jpg    1x,
+                      ./img/desktop/some-img-1@2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <img
+                    src="./img/desktop/some-img-1.jpg"
+                    alt="Desctop"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="whatwedo__text">Десктопные приложения</p>
               </div>
             </li>
             <li class="whatwedo__item">
               <div class="whatwedo__holder">
-                <img src="./img/some-img-2.jpg" alt="Mobile" width="370" />
+                <picture>
+                  <source
+                    srcset="
+                      ./img/desktop/some-img-2.jpg    1x,
+                      ./img/desktop/some-img-2@2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+                  <img
+                    src="./img/desktop/some-img-2.jpg"
+                    alt="Mobile"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="whatwedo__text">Мобильные приложения</p>
               </div>
             </li>
 
             <li class="whatwedo__item">
               <div class="whatwedo__holder">
-                <img src="./img/some-img-3.jpg" alt="Tablet" width="370" />
+                <picture>
+                  <source
+                    srcset="
+                      ./img/desktop/some-img-3.jpg    1x,
+                      ./img/desktop/some-img-3@2x.jpg 2x
+                    "
+                    media="(min-width:1200px)"
+                  />
+
+                  <img
+                    src="./img/desktop/some-img-3.jpg"
+                    alt="Tablet"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="whatwedo__text">Дизайнерские решения</p>
               </div>
             </li>
@@ -208,11 +251,36 @@
           <h2 class="section__title">Наша команда</h2>
           <ul class="team">
             <li class="team__item">
-              <img
-                src="./img/Igor-Demyanenko.jpg"
-                alt="Igor-Demyanenko"
-                width="270"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./img/desktop/Igor-Demyanenko.jpg    1x,
+                    ./img/desktop/Igor-Demyanenko@2x.jpg 2x
+                  "
+                  media="(min-width:1200px)"
+                />
+                <source
+                  srcset="
+                    ./img/tablet/Igor-Demyanenko.jpg    1x,
+                    ./img/tablet/Igor-Demyanenko@2x.jpg 2x
+                  "
+                  media="(min-width:768px)"
+                />
+                <source
+                  srcset="
+                    ./img/mobile/Igor-Demyanenko.jpg    1x,
+                    ./img/mobile/Igor-Demyanenko@2x.jpg 2x
+                  "
+                  media="(max-width:767px)"
+                />
+                <img
+                  src="./img/mobile/Igor-Demyanenko.jpg"
+                  alt="Igor-Demyanenko"
+                  width="450"
+                  height="460"
+                />
+              </picture>
+
               <h3 class="team__title">Игорь Демьяненко</h3>
               <p class="team__text" lang="en">Product Designer</p>
               <!-- social links list -->
@@ -248,7 +316,35 @@
               </ul>
             </li>
             <li class="team__item">
-              <img src="./img/Olha-Repina.jpg" alt="Olha-Repina" width="270" />
+              <picture>
+                <source
+                  srcset="
+                    ./img/desktop/Olha-Repina.jpg    1x,
+                    ./img/desktop/Olha-Repina@2x.jpg 2x
+                  "
+                  media="(min-width:1200px)"
+                />
+                <source
+                  srcset="
+                    ./img/tablet/Olha-Repina.jpg    1x,
+                    ./img/tablet/Olha-Repina@2x.jpg 2x
+                  "
+                  media="(min-width:768px)"
+                />
+                <source
+                  srcset="
+                    ./img/mobile/Olha-Repina.jpg    1x,
+                    ./img/mobile/Olha-Repina@2x.jpg 2x
+                  "
+                  media="(max-width:767px)"
+                />
+                <img
+                  src="./img/mobile/Olha-Repina.jpg"
+                  alt="Olha-Repina"
+                  width="450"
+                  height="460"
+                />
+              </picture>
               <h3 class="team__title">Ольга Репина</h3>
               <p class="team__text" lang="en">Frontend Developer</p>
               <!-- social links list -->
@@ -284,11 +380,35 @@
               </ul>
             </li>
             <li class="team__item">
-              <img
-                src="./img/Nikolay-Tarasov.jpg"
-                alt="Nikolay-Tarasov"
-                width="270"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./img/desktop/Nikolay-Tarasov.jpg    1x,
+                    ./img/desktop/Nikolay-Tarasov@2x.jpg 2x
+                  "
+                  media="(min-width:1200px)"
+                />
+                <source
+                  srcset="
+                    ./img/tablet/Nikolay-Tarasov.jpg    1x,
+                    ./img/tablet/Nikolay-Tarasov@2x.jpg 2x
+                  "
+                  media="(min-width:768px)"
+                />
+                <source
+                  srcset="
+                    ./img/mobile/Nikolay-Tarasov.jpg    1x,
+                    ./img/mobile/Nikolay-Tarasov@2x.jpg 2x
+                  "
+                  media="(max-width:767px)"
+                />
+                <img
+                  src="./img/mobile/Nikolay-Tarasov.jpg"
+                  alt="Nikolay-Tarasov"
+                  width="450"
+                  height="460"
+                />
+              </picture>
               <h3 class="team__title">Николай Тарасов</h3>
               <p class="team__text" lang="en">Marketing</p>
               <!-- social links list -->
@@ -324,11 +444,36 @@
               </ul>
             </li>
             <li class="team__item">
-              <img
-                src="./img/Michail-Ermakov.jpg"
-                alt="Michail-Ermakov"
-                width="270"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./img/desktop/Michail-Ermakov.jpg    1x,
+                    ./img/desktop/Michail-Ermakov@2x.jpg 2x
+                  "
+                  media="(min-width:1200px)"
+                />
+                <source
+                  srcset="
+                    ./img/tablet/Michail-Ermakov.jpg    1x,
+                    ./img/tablet/Michail-Ermakov@2x.jpg 2x
+                  "
+                  media="(min-width:768px)"
+                />
+                <source
+                  srcset="
+                    ./img/mobile/Michail-Ermakov.jpg    1x,
+                    ./img/mobile/Michail-Ermakov@2x.jpg 2x
+                  "
+                  media="(max-width:767px)"
+                />
+                <img
+                  src="./img/mobile/Michail-Ermakov.jpg"
+                  alt="Michail-Ermakov"
+                  width="450"
+                  height="460"
+                />
+              </picture>
+
               <h3 class="team__title">Михаил Ермаков</h3>
               <p class="team__text" lang="en">UI Designer</p>
               <!-- social links list -->

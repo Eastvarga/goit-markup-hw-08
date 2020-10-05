@@ -453,7 +453,8 @@ a {
 }
 
 .social {
-  width: calc(44px * 4 +10px * 3);
+  max-width: 206px;
+  margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1695,7 +1696,6 @@ a {
   .modal__checkbox {
     font-size: 14px;
     line-height: 1.71;
-    font-weight: 1.71;
     width: calc(100% - 23px);
     margin-left: 11px;
     margin-right: 12px;

@@ -175,7 +175,8 @@
     @include font(12px, 1.17, $font-weight-second);
 
     @include for-size(desktop) {
-      @include font($font-size-base, $line-height-base, $line-height-base);
+      font-size: $font-size-base;
+      line-height: $line-height-base;
       width: calc(100% - 23px);
 
       margin-left: 11px;
