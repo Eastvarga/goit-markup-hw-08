@@ -16,7 +16,9 @@
   /* window animation */
   &.is-hidden .modal {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
+    @include for-size(tablet) {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
   }
   &.is-hidden {
     /* visibility: hidden; */
@@ -40,8 +42,12 @@
   border-radius: 4px;
 
   opacity: 1;
-  transition: opacity $time-animation $function-animation,
-    transform $time-animation $function-animation;
+  transition: opacity $time-animation $function-animation;
+
+  @include for-size(tablet) {
+    transition: opacity $time-animation $function-animation,
+      transform $time-animation $function-animation;
+  }
 
   font-size: 12px;
   line-height: 1.17;
