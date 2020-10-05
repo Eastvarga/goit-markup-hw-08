@@ -1354,19 +1354,12 @@ a {
 /* portfolio projects задаем основной шрифт списка проектов */
 .projects {
   display: block;
-  margin: -15px;
   font-size: 16px;
   line-height: 1.87;
   /* задаем ширину контента для 3 элементов в строке */
   /* задаем границы ссылкам */
   /* задаем позицию текста, и отступы описанию карточки */
   /* projects title */
-}
-
-@media screen and (max-width: 767px) {
-  .projects {
-    width: 100%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -1376,19 +1369,20 @@ a {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin: -15px;
   }
 }
 
 .projects__item {
   display: block;
   width: 100%;
-  margin: 15px;
   /* каждый после третьего элемент li будет отодвигаться от верхней строки на 30 пикселей */
 }
 
 @media (min-width: 768px) {
   .projects__item {
     width: calc((100% - 30px * 2) / 2);
+    margin: 15px;
   }
 }
 
@@ -1396,6 +1390,10 @@ a {
   .projects__item {
     width: calc((1200px - 30px * 3) / 3);
   }
+}
+
+.projects__item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .projects__link {

@@ -2,33 +2,34 @@
 .projects {
   display: block;
   @extend %list;
-  margin: -15px;
+
   font-size: $font-size-second;
   line-height: 1.87;
-  @media screen and (max-width: 767px) {
-    width: 100%;
-  }
+  // @media screen and (max-width: 767px) {
+  //   width: 100%;
+  // }
   @include for-size(tablet) {
     display: flex;
     flex-wrap: wrap;
+    margin: -15px;
   }
   /* задаем ширину контента для 3 элементов в строке */
   &__item {
     display: block;
     width: 100%;
-    margin: 15px;
 
     @include for-size(tablet) {
       width: calc((100% - 30px * 2) / 2);
+      margin: 15px;
     }
     @include for-size(desktop) {
       width: calc((1200px - 30px * 3) / 3);
     }
 
     /* каждый после третьего элемент li будет отодвигаться от верхней строки на 30 пикселей */
-    // &:nth-child(n + 4) {
-    //   margin-top: 30px;
-    // }
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
   /* задаем границы ссылкам */
   &__link {
