@@ -28,7 +28,9 @@
 
     /* каждый после третьего элемент li будет отодвигаться от верхней строки на 30 пикселей */
     &:not(:last-child) {
-      margin-bottom: 30px;
+      @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
     }
   }
   /* задаем границы ссылкам */
