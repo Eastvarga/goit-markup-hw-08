@@ -28,7 +28,7 @@
   }
 
   @include for-size(tablet) {
-    max-width: 768px;
+    // max-width: 768px;
     background-image: linear-gradient(
         to right,
         $hero-gradient-color,
@@ -47,7 +47,7 @@
     }
   }
   @include for-size(desktop) {
-    max-width: 1600px;
+    // max-width: 1600px;
     padding: 200px 0;
     background-image: linear-gradient(
         to right,
