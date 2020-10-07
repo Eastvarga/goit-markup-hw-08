@@ -833,7 +833,6 @@ a {
 
 @media (min-width: 768px) {
   .hero {
-    max-width: 768px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../img/tablet/hero-bg.jpg");
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/tablet/hero-bg.jpg");
   }
@@ -848,7 +847,6 @@ a {
 
 @media (min-width: 1200px) {
   .hero {
-    max-width: 1600px;
     padding: 200px 0;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../img/desktop/hero-bg.jpg");
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/desktop/hero-bg.jpg");
@@ -924,6 +922,10 @@ a {
   .features__item {
     width: calc((100% - 30px * 4) / 4);
   }
+}
+
+.features__item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .features__title {
