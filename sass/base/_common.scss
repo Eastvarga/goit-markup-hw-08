@@ -14,7 +14,7 @@ body {
   letter-spacing: $letter-spacing-base;
 
   padding-top: 60px;
-  @include for-size(desktop) {
+  @include for-size(tablet) {
     padding-top: 80px;
   }
 }

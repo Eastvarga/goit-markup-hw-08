@@ -288,7 +288,7 @@ body {
   padding-top: 60px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   body {
     padding-top: 80px;
   }
@@ -836,6 +836,7 @@ a {
 
 @media (min-width: 1200px) {
   .hero {
+    max-width: 1600px;
     padding: 200px 0;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../img/desktop/hero-bg.jpg");
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/desktop/hero-bg.jpg");
@@ -1522,9 +1523,9 @@ a {
   position: fixed;
   z-index: 4;
   left: 0;
+  top: 0;
   right: 0;
   bottom: 0;
-  top: 0;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 94px 15px;
   opacity: 1;
