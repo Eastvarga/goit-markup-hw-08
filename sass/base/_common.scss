@@ -136,17 +136,17 @@ a {
   padding: 0 15px;
   margin: 0 auto;
 
-  // @media screen and (max-width: 479px) {
-  //   max-width: 480px;
-  // }
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+  }
   // @include for-size(mobile) {
-  max-width: 480px;
+  // max-width: 480px;
   // }
   @include for-size(tablet) {
-    max-width: 768px;
+    width: 768px;
   }
   @include for-size(desktop) {
-    max-width: 1200px;
+    width: 1200px;
   }
 
   &--header {
@@ -164,20 +164,23 @@ a {
       align-items: baseline;
     }
   }
-  &--forfilter {
-    @extend %flex;
-    padding: 60px 15px 40px;
-    @include for-size(tablet) {
-      padding-bottom: 30px;
-    }
+  // &--forfilter {
+  //   @extend %flex;
+  //   padding: 60px 15px 40px;
+  //   @include for-size(tablet) {
+  //     padding-bottom: 30px;
+  //   }
 
-    @include for-size(desktop) {
-      padding: 94px 15px 50px;
-    }
-  }
+  //   @include for-size(desktop) {
+  //     padding: 94px 15px 50px;
+  //   }
+  // }
   &--forprojects {
     @extend %flex;
-    padding-bottom: 94px;
+    padding: 60px 15px;
+    @include for-size(desktop) {
+      padding: 94px 15px;
+    }
   }
 }
 
