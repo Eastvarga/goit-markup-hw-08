@@ -82,11 +82,11 @@ a {
     //   padding: 94px 0;
     // }
   }
-  // &--pudding {
-  // padding: 60px 0;
-  // @include for-size(desktop) {
-  //   padding: 94px 0;
-  // }
+  // &--projects {
+  //   padding: 60px 0;
+  //   @include for-size(desktop) {
+  //     padding: 94px 0x;
+  //   }
   // }
 }
 
@@ -177,10 +177,6 @@ a {
   // }
   &--forprojects {
     @extend %flex;
-    padding: 60px 15px;
-    @include for-size(desktop) {
-      padding: 94px 15px;
-    }
   }
 }
 

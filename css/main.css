@@ -208,7 +208,7 @@ summary {
 
 /* создаем флекс элементы,
  даем возможность переноса элементов на другую строку */
-.container--header, .container--forfilter, .container--forprojects, .social, .social__link, .contact__item, .features__holder, .whatwedo, .clients, .follow__list, .follow__link, .follow__item, .filter {
+.container--header, .container--forprojects, .social, .social__link, .contact__item, .features__holder, .whatwedo, .clients, .follow__list, .follow__link, .follow__item, .filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -417,18 +417,23 @@ a {
 .container {
   padding: 0 15px;
   margin: 0 auto;
-  max-width: 480px;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 480px;
+  }
 }
 
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    width: 768px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1200px;
+    width: 1200px;
   }
 }
 
@@ -458,26 +463,6 @@ a {
         -ms-flex-align: baseline;
             align-items: baseline;
   }
-}
-
-.container--forfilter {
-  padding: 60px 15px 40px;
-}
-
-@media (min-width: 768px) {
-  .container--forfilter {
-    padding-bottom: 30px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container--forfilter {
-    padding: 94px 15px 50px;
-  }
-}
-
-.container--forprojects {
-  padding-bottom: 94px;
 }
 
 /* общие настройки для иконок */
@@ -1349,6 +1334,7 @@ a {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  margin-bottom: 32px;
   /* задаем отступы для всех кроме последней кнопок*/
   /* filter button задаем шрифты и геометрию кнопок */
 }
@@ -1358,6 +1344,13 @@ a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-bottom: 22px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .filter {
+    margin-bottom: 42px;
   }
 }
 
